@@ -5,18 +5,43 @@ class Weather extends React.Component {
         return (
             <div className="weather__info">
                 {
-                    this.props.city && this.props.country && <p className="weather__key"> Location:
-                        <span className="weather__value"> {this.props.city}, {this.props.country}</span>
+                    this.props.city  && <p className="weather__key"> Location:
+                        <span className="weather__value"> {this.props.city}</span>
                     </p>
                 }
                 {
                     this.props.temperature && <p className="weather__key"> Temperature:
-                        <span className="weather__value"> {this.props.temperature}	</span>
+                        <span className="weather__value"> {this.props.temperature} ℃</span>
+                    </p>
+                }
+                {
+                    this.props.temperatureMin && <p className="weather__key"> Minimum temperature:
+                        <span className="weather__value"> {this.props.temperatureMin} ℃</span>
+                    </p>
+                }
+                {
+                    this.props.temperatureMax && <p className="weather__key"> Maximum temperature:
+                        <span className="weather__value"> {this.props.temperatureMax} ℃</span>
+                    </p>
+                }
+                {
+                    (this.props.clouds || this.props.clouds === 0) &&  <p className="weather__key"> Clouds:
+                        <span className="weather__value"> {this.props.clouds} %</span>
+                    </p>
+                }
+                {
+                    this.props.windSpeed && <p className="weather__key"> Wind speed:
+                        <span className="weather__value"> {this.props.windSpeed} m/s</span>
+                    </p>
+                }
+                {
+                    this.props.pressure && <p className="weather__key"> Pressure:
+                        <span className="weather__value"> {this.props.pressure}	hpa</span>
                     </p>
                 }
                 {
                     this.props.humidity && <p className="weather__key"> Humidity:
-                        <span className="weather__value"> {this.props.humidity} </span>
+                        <span className="weather__value"> {this.props.humidity} %</span>
                     </p>
                 }
                 {
